@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission To Mars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style>
+    .weather {
+      border: solid 1px lightgray;
+      padding: 16px;
+      margin-bottom: 24px;
+      margin-right: 24px;
+    }
+    .text{
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission To Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <h2>Latest Mars News</h2>
+    <h4>{{ mars.title[0] }}</h4>
+    <div>{{ mars.news[0] }}</div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Featured Mars Image<h3>
+            <div class="floated">
+              <img src={{mars.mars_pic[0]}} style="width:100%">
+            </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="row weather">
+          <h4>Current Weather On Mars :</h4>
+          {{ mars.mars_weather[0] }}
+        </div>
+        <div class="row">
+          <table class="tablepress tablepress-id-p-mars" id="tablepress-p-mars">
+            <tbody>
+              <tr class="row-1 odd">
+                <td class="column-1"><strong>{{mars.facts[0][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[0][1]}}<br /></td>
+              </tr>
+              <tr class="row-2 even">
+                <td class="column-1"><strong>{{mars.facts[1][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[1][1]}}<br /></td>
+              </tr>
+              <tr class="row-3 odd">
+                <td class="column-1"><strong>{{mars.facts[2][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[2][1]}}</td>
+              </tr>
+              <tr class="row-4 even">
+                <td class="column-1"><strong>{{mars.facts[3][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[3][1]}}</td>
+              </tr>
+              <tr class="row-5 odd">
+                <td class="column-1"><strong>{{mars.facts[4][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[4][0]}}<br /> (1.38 AU)</td>
+              </tr>
+              <tr class="row-6 even">
+                <td class="column-1"><strong>{{mars.facts[5][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[5][1]}}<br /></td>
+              </tr>
+              <tr class="row-7 odd">
+                <td class="column-1"><strong>{{mars.facts[6][0]}} </strong></td>
+                <td class="column-2">-{{mars.facts[6][1]}}</td>
+              </tr>
+              <tr class="row-8 even">
+                <td class="column-1"><strong>{{mars.facts[7][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[7][1]}}</td>
+              </tr>
+              <tr class="row-9 odd">
+                <td class="column-1"><strong>{{mars.facts[8][0]}}</strong></td>
+                <td class="column-2">{{mars.facts[8][1]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div>
+      <u><h3>Mars Hemisheres</h3></u>
+          <div class="row">
+            <!-- <div class="col-md-8"> -->
+              <div class="col-sm-4 text">
+                {{mars.mars_pic_title[0]}} <img src={{mars.mars_pic_list[0]}} style="width: 100%">
+              </div>
+              <div class="col-sm-4 text">
+                {{mars.mars_pic_title[1]}} <img src={{mars.mars_pic_list[1]}} style="width: 100%">
+              </div>
+            <!-- </div> -->
+          </div>
+          <div class="row">
+            <!-- <div class="col-md-8 "> -->
+              <div class="col-sm-4 text">
+                {{mars.mars_pic_title[2]}} <img src={{mars.mars_pic_list[2]}} style="width: 100%">
+              </div>
+              <div class="col-sm-4 text">
+                {{mars.mars_pic_title[3]}} <img src={{mars.mars_pic_list[3]}} style="width: 100%">
+              </div>
+            <!-- </div> -->
+          </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
